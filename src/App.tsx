@@ -1,12 +1,8 @@
 import React from "react";
-import './App.css';
-
-import first_slide from '../public/sections/first.png';
-
+import './index.css';
 
 export const App = () => {
-    return <div className="test">
-        Network
-        <img src={first_slide} />
-    </div> 
+    return <h1 className="text-3xl font-bold underline">
+    Hello world!
+  </h1>
 }
