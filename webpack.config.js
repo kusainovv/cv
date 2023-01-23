@@ -46,6 +46,15 @@ export default {
                 use: ["style-loader", "css-loader"],
             },
 
+            {
+                test: /\.(png|jpe?g|gif|ttf)$/i,
+                use: [
+                  {
+                    loader: 'file-loader',
+                  },
+                ],
+            },
+
         ]
     },
 

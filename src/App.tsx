@@ -1,7 +1,12 @@
 import React from "react";
 import './App.css';
 
+import first_slide from '../public/sections/first.png';
+
 
 export const App = () => {
-    return <h1>test</h1>
+    return <div className="test">
+        Network
+        <img src={first_slide} />
+    </div> 
 }
