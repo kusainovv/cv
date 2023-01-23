@@ -9,6 +9,6 @@
         "sourceMap": true,
         "outDir": "/dist",
         "allowJs": true,
-        "jsx": "react"
+        "jsx": "react",
     }
 }
