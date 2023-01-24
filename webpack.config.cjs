@@ -1,15 +1,17 @@
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { resolve, dirname } from 'path';
-import { fileURLToPath } from 'url';
-import pkg from 'webpack';
-const { HotModuleReplacementPlugin } = pkg;
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+// import { resolve, dirname } from 'path';
+// import { fileURLToPath } from 'url';
+// import pkg from 'webpack';
+const { HotModuleReplacementPlugin } = require('webpack')
+const path = require('path');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-export default {
+module.exports = {
     entry: './src/index.tsx',
     mode: "development",
 
     output: {
-        path: resolve(dirname(fileURLToPath(import.meta.url)), 'dist'),
+        path: path.resolve(__dirname, 'dist'),
         filename: '[name].js',
         clean: true
     },
@@ -19,7 +21,11 @@ export default {
     },
 
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx']
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.png', '.css'],
+        
+        alias: {
+            sections: path.resolve(__dirname, 'public/sections')
+        }
     },
 
     module: {
@@ -43,16 +49,12 @@ export default {
 
             {
                 test: /\.css$/,
-                use: ["style-loader", "css-loader", "postcss-loader"],
+                use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
             },
 
             {
                 test: /\.(png|jpe?g|gif|ttf)$/i,
-                use: [
-                  {
-                    loader: 'file-loader',
-                  },
-                ],
+                type: "asset/resource"
             },
 
         ]
@@ -60,6 +62,7 @@ export default {
 
     plugins: [
         new HtmlWebpackPlugin({ template: './public/index.html' }),
-        new HotModuleReplacementPlugin()
+        new HotModuleReplacementPlugin(),
+        new MiniCssExtractPlugin()
     ]
 }
