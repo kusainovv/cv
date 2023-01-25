@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { GreetingBurgerMenu } from "./GreetingBurgerMenu";
 
 export const Greeting = () => {
@@ -35,17 +35,39 @@ export const Greeting = () => {
             
             <div className={`mt-2`}>
                 <div className={`
-                    w-[30px] h-[50px] bg-transparent border-solid border-2 border-white rounded-[22px]
-                    flex flex-col justify-center items-center overflow-hidden
+                    w-[30px] 
+                    h-[50px] 
+                    bg-transparent 
+                    border-solid 
+                    border-2 
+                    border-white 
+                    rounded-[22px]
+                    flex 
+                    flex-col 
+                    justify-center 
+                    items-center 
+                    overflow-hidden
                 `}>
-                    <div className={`relative top-0 animate-scroll`}>
+                    <div className={`
+                        relative 
+                        top-0 
+                        animate-scroll
+                    `}>
                         <div className={scroll_arrow}></div>
                         <div className={scroll_arrow}></div>
                         <div className={scroll_arrow}></div>
                     </div>
                 </div>
 
-                <div className={'m-auto mt-2 w-[8px] h-[8px] bg-cyan-200 rounded-[22px] opacity-50'}></div>
+                <div className={`
+                    m-auto 
+                    mt-2 
+                    w-[8px] 
+                    h-[8px] 
+                    bg-cyan-200 
+                    rounded-[22px] 
+                    opacity-50
+                `}></div>
 
                 <GreetingBurgerMenu />
             </div>
