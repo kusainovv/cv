@@ -12,3 +12,8 @@ declare module "*.webp" {
     const value: URL;
     export default value;
 }
+
+declare module "*.jpg" {
+    const value: URL;
+    export default value;
+}
