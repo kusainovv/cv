@@ -17,3 +17,8 @@ declare module "*.jpg" {
     const value: URL;
     export default value;
 }
+
+declare module "*.svg" {
+    const value: URL;
+    export default value;
+}

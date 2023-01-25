@@ -27,7 +27,8 @@ module.exports = {
 
     fontFamily: {
       'network': 'Network',
-      'unbounded': 'Unbounded'
+      'unbounded': 'Unbounded',
+      'kalam': 'Kalam'
     },
 
     backgroundImage: {
