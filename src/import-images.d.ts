@@ -1,24 +1,24 @@
 declare module "*.png" {
-    const value: URL;
+    const value: string;
     export default value;
 }
 
 declare module "*.jpeg" {
-    const value: URL;
+    const value: string;
     export default value;
 }
 
 declare module "*.webp" {
-    const value: URL;
+    const value: string;
     export default value;
 }
 
 declare module "*.jpg" {
-    const value: URL;
+    const value: string;
     export default value;
 }
 
 declare module "*.svg" {
-    const value: URL;
+    const value: string;
     export default value;
 }

@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
+import { useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import burger_menu from '../../../public/sections/air.jpg';
-
+import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader'
+// import dfat_punk from '../../../public/DAFT_PUNK_HELMETS.fbx';
 
 
 function runBurgerMenu() {
@@ -54,14 +56,47 @@ function runBurgerMenu() {
 
 
 
+function runMainMenu() {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.1, 1000);
+    
+    const renderer = new THREE.WebGLRenderer({
+      canvas: document.getElementById('full_menu'),
+    });
+
+    renderer.setClearColor(0x000, 0);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.position.setZ(30);
+     
+    renderer.render(scene, camera);
+}
 
 
 
 export const BurgerMenu = () => {
-    
+    const [isShowFullMenu, setShowFullMenu] = useState(false);
+
     useEffect(() => {
         runBurgerMenu();
-    }, []);
 
-    return <canvas className={`fixed !w-[320px] rounded-full !h-[290px] top-0 right-0 translate-x-1/2 -translate-y-1/2 cursor-pointer`} id="burger_menu"></canvas>      
+        if (isShowFullMenu) {
+            runMainMenu();
+        }
+    }, [ isShowFullMenu ]);
+
+    return <>
+        <div className={`fixed w-screen h-screen top-0 bg-black ${isShowFullMenu ? 'left-0' : 'left-full'} transition-all`}>
+            <canvas id="full_menu">
+                {/* make lava lamp effect */}
+                {/* effect */}
+                {/* settings */}
+            </canvas>
+        </div>
+
+
+        <canvas className={`fixed !w-[320px] rounded-full !h-[290px] top-0 right-0 translate-x-1/2 -translate-y-1/2 cursor-pointer`} onClick={() => {
+            setShowFullMenu(true);
+        }} id="burger_menu"></canvas>   
+    </>   
 }

@@ -21,8 +21,7 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx', '.png', '.css'],
-        
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.png', '.css', '.json', '.fbx'],
         alias: {
             sections: path.resolve(__dirname, 'public/sections')
         }
@@ -39,7 +38,6 @@ module.exports = {
                     }
                 },
             },
-            
 
             {
                 test: /\.html$/i,
@@ -56,7 +54,6 @@ module.exports = {
                 test: /\.(png|jpe?g|gif|ttf|svg)$/i,
                 type: "asset/resource"
             },
-
         ]
     },
 

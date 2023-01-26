@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { GreetingBurgerMenu } from "./GreetingBurgerMenu";
+import { useTranslation } from "react-i18next";
 
 export const Greeting = () => {
     const [isShowNeon, setShowNeon] = useState(false);
@@ -22,8 +22,9 @@ export const Greeting = () => {
         border-t-cyan-100
     `;
 
+    const { t } = useTranslation();
 
-    return <div className={`relative h-screen bg-section_first bg-no-repeat bg-cover`}>
+    return <div className={`relative h-screen bg-section_first bg-no-repeat bg-cover`} >
         <div className={`absolute bg-section_first_neon bg-no-repeat bg-cover ${ isShowNeon ? 'w-full h-screen' : ''}`}></div>
 
         <div className={"h-screen pb-5 flex flex-col justify-end bg-transparent items-center"}>
@@ -31,7 +32,7 @@ export const Greeting = () => {
                 Hi, I'm Ratmir
             </h1>
 
-            <p className={'pb-5 font-unbounded text-xl text-cyan-200'}>Scroll down & join the portfolio</p>
+            <p className={'pb-5 font-unbounded text-xl text-cyan-200'}>{t('greeting.scroll_down')}</p>
             
             <div className={`mt-2`}>
                 <div className={`
@@ -68,8 +69,6 @@ export const Greeting = () => {
                     rounded-[22px] 
                     opacity-50
                 `}></div>
-
-                <GreetingBurgerMenu />
             </div>
         </div>
     </div>
