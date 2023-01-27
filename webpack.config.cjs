@@ -21,9 +21,9 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx', '.png', '.css', '.json', '.fbx'],
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.png', '.css', '.json', '.fbx', '.glf'],
         alias: {
-            sections: path.resolve(__dirname, 'public/sections')
+            sections: path.resolve(__dirname, 'public/sections'),
         }
     },
 
@@ -44,6 +44,14 @@ module.exports = {
                 loader: "html-loader",
             },
             
+            {
+                test: /\.(fbx|gltf|glb)$/i,
+                use: [
+                    { 
+                        loader: 'file-loader',
+                    }
+                ]
+            },
 
             {
                 test: /\.css$/,

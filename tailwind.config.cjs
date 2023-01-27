@@ -13,16 +13,30 @@ module.exports = {
         'scroll': {
           'from': { top: '-100%' },
           'to': { top: '100%' },
+        },
+
+        'show_menu': {
+          'from': { 
+            left: '-100%' 
+          },
+          'to': { 
+            left: '100%' 
+          },
         }
       },
 
       animation: {
-        'scroll': 'scroll 2s linear infinite'
+        'scroll': 'scroll 2s linear infinite',
+        'show_menu': 'show_menu 2s linear infinite',
       },
 
       colors: {
         scroll_border: '#ac91b0 '
       },
+
+      transitionDuration: {
+        '2000': '2000ms'
+      }
     },
 
     fontFamily: {
@@ -34,6 +48,9 @@ module.exports = {
     backgroundImage: {
       'section_first': "url('~sections/first.jpeg')",
       'section_first_neon': "url('~sections/dac-neon.webp')",
+    
+      'main_menu_background_texture': "url(~sections/texture.png)",
+      'main_menu_background': "url('~sections/air.jpg')",
     }
   },
   variants: {
