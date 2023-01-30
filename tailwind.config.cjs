@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   purge: [
@@ -8,6 +10,14 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
+
+    screens: {
+      m: '600px',
+      s: '480px',
+      xs: '320px',
+      ...defaultTheme.screens
+    },
+
     extend: {
       keyframes: {
         'scroll': {

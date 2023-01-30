@@ -28,12 +28,26 @@ export const Greeting = () => {
         <div className={`absolute bg-section_first_neon bg-no-repeat bg-cover ${ isShowNeon ? 'w-full h-screen' : ''}`}></div>
 
         <div className={"h-screen pb-5 flex flex-col justify-end bg-transparent items-center"}>
-            <h1 className={"relative font-network text-6xl text-white overflow-hidden"}>
+            <h1 className={`
+                relative 
+                font-network 
+                text-6xl 
+                text-white 
+                overflow-hidden
+                max-s:text-4xl
+                max-xs:text-4xl
+            `}>
                 Hi, I'm Ratmir
             </h1>
 
-            <p className={'pb-5 font-unbounded text-xl text-cyan-200'}>{t('greeting.scroll_down')}</p>
-            
+            <p className={`
+                pb-5 
+                font-unbounded 
+                text-xl 
+                text-cyan-200
+                max-s:text-sm
+                max-xs:text-sm
+            `}>{t('greeting.scroll_down')}</p>
             <div className={`mt-2`}>
                 <div className={`
                     w-[30px] 

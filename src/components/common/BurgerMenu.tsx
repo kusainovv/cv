@@ -193,7 +193,19 @@ export const BurgerMenu = () => {
         </div>
 
 
-        <canvas className={`fixed !w-[320px] rounded-full !h-[290px] top-0 right-0 translate-x-1/2 -translate-y-1/2 cursor-pointer`} onClick={() => {
+        <canvas className={`
+            fixed 
+            !w-[25vh] 
+            rounded-full 
+            !h-[25vh] 
+            top-0 
+            right-0 
+            translate-x-1/2 
+            -translate-y-1/2 
+            cursor-pointer           
+            max-sm:!w-[15vh]
+            max-sm:!h-[15vh]
+        `} onClick={() => {
             setShowFullMenu(!isShowFullMenu);
         }} id="burger_menu"></canvas>   
     </>   
