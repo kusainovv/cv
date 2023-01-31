@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import arrow from '../../../../public/sections/arrow.svg';
-import { BurgerMenu } from "../../common/BurgerMenu";
+import { BurgerMenu } from "../../common/BurgerMenu/BurgerMenu";
 
 
 export const GreetingBurgerMenu = () => {

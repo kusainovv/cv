@@ -34,9 +34,15 @@ module.exports = {
                 use: {
                     loader: "babel-loader",
                     options: {
-                        presets: ["@babel/preset-env", "@babel/preset-react"]
+                        presets: ["@babel/preset-typescript", "@babel/preset-react"]
                     }
                 },
+            },
+
+            {
+                test: /\.js$/,
+                enforce: 'pre',
+                use: ['source-map-loader']
             },
 
             {
@@ -68,6 +74,6 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({ template: './public/index.html' }),
         new HotModuleReplacementPlugin(),
-        new MiniCssExtractPlugin()
+        new MiniCssExtractPlugin(),
     ]
 }
