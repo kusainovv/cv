@@ -1,4 +1,4 @@
-import { BurgerMenuStore } from "./BurgerMenuStore";
+import { BurgerMenuStore } from "./entities/BurgerMenuStore";
 
 
 export class RootStore {
