@@ -21,7 +21,7 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx', '.png', '.css', '.json', '.fbx', '.glf'],
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.png', '.css', '.json'],
         alias: {
             sections: path.resolve(__dirname, 'public/sections'),
         }
