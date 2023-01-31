@@ -1,3 +1,12 @@
+@import url('../public/fonts/network.css');
+
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+
+
+body {
+    margin: 0;
+    height: 600vh;
+}
