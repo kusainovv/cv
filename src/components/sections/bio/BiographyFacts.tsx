@@ -13,7 +13,6 @@ export const BiographyFacts = () => {
                 t('bio.place'),
                 t('bio.english_level'),
                 t('bio.russian_level'),
-                t('bio.work_exp'),
             ].map((label, idx) => <div key={idx} className={`
                             mb-5
                             text-xl
