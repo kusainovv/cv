@@ -2,5 +2,16 @@
     "greeting": {
         "scroll_down": "Scroll down & join the club!",
         "click_for_settings": "Click for show the settings"
+    },
+
+
+    "bio": {
+        "my_name_is_ratmir": "My name is Ratmir",
+        "age": "I'm 19 year",
+        "description": "I'm a front-end developer with a desire to improve, get new tasks, learn new technologies, apply new approaches and become a good developer.",
+        "education": "Education - specialized secondary education (IT)",
+        "place": "Place - Russia, Saratov",
+        "english_level": "English - B2",
+        "russian_level": "Russian - Native"
     }
 }

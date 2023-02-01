@@ -56,11 +56,15 @@ module.exports = {
     },
 
     backgroundImage: {
-      'section_first': "url('~sections/first.jpeg')",
+      'section_first': "url('~sections/greeting/bg.jpeg')",
+      'section_second': "url('~sections/bio/bg.jpg')",
+
       'section_first_neon': "url('~sections/dac-neon.webp')",
     
       'main_menu_background_texture': "url(~sections/texture.png)",
       'main_menu_background': "url('~sections/air.jpg')",
+
+      'cloud': "url('~sections/cloud.svg')",
     }
   },
   variants: {

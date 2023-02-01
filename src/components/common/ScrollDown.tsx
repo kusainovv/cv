@@ -39,13 +39,14 @@ export const ScrollDown = () => {
         </div>
 
         <div className={`
-    m-auto 
-    mt-2 
-    w-[8px] 
-    h-[8px] 
-    bg-cyan-200 
-    rounded-[22px] 
-    opacity-50
-`}></div>
+            animate-bounce
+            m-auto 
+            mt-2 
+            w-[8px] 
+            h-[8px] 
+            bg-cyan-200 
+            rounded-[22px] 
+            opacity-50
+        `}></div>
     </>
 }

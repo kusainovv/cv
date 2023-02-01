@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import arrow from '../../../../public/sections/arrow.svg';
+import cloud from '../../../../public/sections/cloud.svg';
 import { BurgerMenu } from "../../common/BurgerMenu/BurgerMenu";
 
 
@@ -12,8 +13,7 @@ export const GreetingBurgerMenu = () => {
             fixed 
             right-[15vh] 
             max-sm:right-[10vh] 
-            top-[50px]
-            max-sm:top-[25px]
+            top-[2vh]
         `}>
             <img src={arrow} className={`
                 w-[100px] 
@@ -29,7 +29,9 @@ export const GreetingBurgerMenu = () => {
                 text-2xl
                 max-s:text-base
                 max-xs:text-sm
-            `}>
+            `} style={{
+                backgroundImage: `url('data:image/svg+xml;utf8,${cloud}')`
+            }}>
                 {t('greeting.click_for_settings')}
             </p>
         </div>
