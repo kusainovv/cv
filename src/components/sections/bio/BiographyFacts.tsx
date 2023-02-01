@@ -12,7 +12,8 @@ export const BiographyFacts = () => {
                 t('bio.education'),
                 t('bio.place'),
                 t('bio.english_level'),
-                t('bio.russian_level')
+                t('bio.russian_level'),
+                t('bio.work_exp'),
             ].map((label, idx) => <div key={idx} className={`
                             mb-5
                             text-xl
@@ -29,8 +30,8 @@ export const BiographyFacts = () => {
 
                                 max-xl:text-lg
                                 max-s:text-base
-                            `}>{label.split(' ')[0]}</span>
-                {` ${label.split(' ').slice(1).join(' ')}`}
+                            `}>{label.split('-')[0]}</span>
+                {`- ${label.split('-').slice(1).join(' ')}`}
             </div>)
         }
     </>
