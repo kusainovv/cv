@@ -13,8 +13,7 @@ export const GreetingBurgerMenu = () => {
             fixed 
             right-[15vh] 
             max-sm:right-[10vh] 
-            top-[50px]
-            max-sm:top-[25px]
+            top-[2vh]
         `}>
             <img src={arrow} className={`
                 w-[100px] 

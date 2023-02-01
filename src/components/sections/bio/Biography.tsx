@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import character from '../../../../public/sections/bio/me.png';
 import cloud from '../../../../public/sections/cloud.svg';
 import * as THREE from 'three';
@@ -11,6 +11,8 @@ import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass';
 import { runAnimation } from '../../../utils/runAnimation';
 import smoke_texture from '../../../../public/smoke.png';
 import { Indicator } from "../../common/Indicator/Indicator";
+import { useTranslation } from "react-i18next";
+import block_menu from '../../../../public/sections/bio/block.svg';
 
 const runFog = () => {
     const scene = new THREE.Scene();
@@ -92,16 +94,25 @@ const runFog = () => {
         cloudParticles.forEach(p => {
             p.rotation.z -= 0.0008;
         })
-    })
+    });
     
+
+    const onWindowResize = () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    window.addEventListener("resize", onWindowResize, false);
 }
 
 
 export const Biography = () => {
-
     useEffect(() => {
         runFog();
     }, []);
+
+    const { t } = useTranslation();
 
     return <div className={`
         relative 
@@ -115,11 +126,26 @@ export const Biography = () => {
         flex
         items-center
         justify-center
+
+        max-lg:flex-col
     `}>
         <img src={character} className={`
-            w-[544px]
+            max-w-[544px]
             right-[10%]
             mt-auto
+
+            max-xl:w-[440px]
+
+            max-lg:rounded-br-[0]
+            max-lg:w-[100%]
+            max-lg:absolute
+            max-lg:bottom-[0]
+            max-lg:right-[0]
+
+            max-s:w-[100%]
+            max-s:bottom-[0%]
+
+            max-xs:translate-y-[-50%]
         `} />
 
         <div className={`
@@ -128,29 +154,49 @@ export const Biography = () => {
             color-slate-500
             box-content
             ml-[50px]
-       
+            transition-[10s]
             bg-black/60
             rounded-br-[50%]
-        `}>
 
-                <Indicator />
+            max-xl:ml-[0px]
+            max-lg:w-full
+            max-lg:rounded-br-[0]
+            max-lg:mt-auto
+        `}>
+                <div className={`animate-bounce`}>
+                    <Indicator />
+                </div>
 
                 <div className={`
                     p-[10px]
-                `}>
+                    max-lg:pl-[30px]
+                    max-lg:w-[50%]
+                    max-sm:w-[100%]
+               `}>
                     <h1 className={`
                         text-4xl
                         text-amber-200
                         font-unbounded
                         w-fit
                         underline
-                    `}>My name is Ratmir</h1>
+
+                        max-xl:text-3xl
+                        max-xs:text-xl
+                        max-s:text-lg
+                    `}>{t('bio.my_name_is_ratmir')}</h1>
+
                     <h2 className={`
                         mt-1
                         text-2xl
                         text-cyan-200
                         font-unbounded
-                    `}>I'm 19 year</h2>
+
+                        max-xl:text-xl
+                        max-xs:text-xl
+
+                        max-s:text-base
+                        max-s:mt-0
+                    `}>{t('bio.age')}</h2>
 
                     
                     <p className={`
@@ -159,27 +205,36 @@ export const Biography = () => {
                         text-base
                         text-slate-200
                         font-unbounded   
+
+                        max-xl:text-sm
+                        max-s:text-sm
                     `}>
-                        Я Front-end разработчик с желанием совершенствоваться, получать новые задачи, изучать новые технологии, применять новые подходы и стать хорошим разработчиком. 
+                        {t('bio.description')}
                     </p>
 
 
                     {
                         [
-                            'Education - specialized secondary education (IT)',
-                            'Place - Russia, Saratov',
-                            'English - B2',
-                            'Russian - Native'
+                            t('bio.education'),
+                            t('bio.place'),
+                            t('bio.english_level'),
+                            t('bio.russian_level')
                         ].map(label => <div className={`
                             mb-5
                             text-xl
-                        text-slate-200
+                          text-slate-200
                             font-unbounded   
+
+                            max-xl:text-lg
+                            max-s:text-sm
                         `}>
                             <span className={`
                                 text-xl
-                            text-cyan-200
+                              text-cyan-200
                                 underline
+
+                                max-xl:text-lg
+                                max-s:text-base
                             `}>{label.split(' ')[0]}</span>
                             {` ${label.split(' ').slice(1).join(' ')}`}
                         </div>)
