@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as THREE from 'three';
 import { runAnimation } from "../../../utils/runAnimation";
 import character from '../../../../public/sections/tech_skills/cyborg.png';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
 import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass';
-import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass';
+import { useTranslation } from "react-i18next";
 
 const skills =  [
     'HTML', 'HTML5', 'CSS', 'CSS3', 'React', 'React Hooks', 'React Context', 'React-router', 'react-router-dom', 
@@ -74,11 +74,20 @@ const runSphere = () => {
 }
 
 export const TechSkills = () => {
-    
+    const canvas_content = useRef();
+    const { t } = useTranslation();
+
+    const [canvasWrapper, setCanvasWrapper] = useState(0);
+
     useEffect(() => {
         runSphere();
-    }, []);
 
+        setCanvasWrapper(canvas_content.current.clientHeight + 20)
+        window.addEventListener('resize', (e) => {
+            setCanvasWrapper(canvas_content.current.clientHeight + 20);
+        });
+    }, [ canvas_content.current ]);
+    console.warn(canvasWrapper);
     return <div className={`
         relative 
         min-h-screen 
@@ -89,58 +98,69 @@ export const TechSkills = () => {
     `}>
 
             <div className={`
-                 relative
+                relative
             `}>
                     
                 <h1 className={`
-                    pl-10
+                    pl-5
                     pb-10
                     pt-10
                     text-5xl
                   text-slate-100
                     underline
                   bg-black
-                `}>My tech skills</h1>
-                <canvas id="bg" className={`
-                    left-0
-                    top-0
-                    !w-[100%]
-                    h-inherit
-                `}></canvas>
-                <div className={`
-                    absolute
-                    w-auto
-                    top-[10%]
-                    p-5
-                    bg-black/20
-                `}>
-                {/* 
-                    gatsby, bootstrap, preact, storybook 
-                    'e2e testing', 'WebdriverIO', no-code,
-                    apolo, websocket
-                */}
-                {
-                   skills.map((tech, idx) => <span key={idx} className={`
-                      inline-block
-                      m-1
-                      p-2
-                    bg-slate-50/70
-                      text-base
 
-                      max-lg:text-sm
-                      max-lg:m-1
-                      max-lg:p-1
+                    max-lg:text-3xl
+                    max-m:pb-0
+                `}>{t('tech_skills.title')}</h1>
 
-                      max-m:text-xs
-                      max-m:m-[2px]
-                      max-m:p-[4px]
+                <div style={{
+                    height: `${canvasWrapper + 20}px`
+                }}>
+                    <canvas id="bg" className={`
+                        left-0
+                        top-0
+                        !w-[100%]
+                        !h-full
+                    `}></canvas>
+                    <div className={`
+                        absolute
+                        w-auto
+                        top-[10%]
+                        p-5
+                        bg-black/20
 
-                      max-s:text-xs
-                      max-s:m-[2px]
-                      max-s:p-[4px]
-                    `}>{tech}</span>)
-                }
-            </div>
+                        max-m:pt-0
+                    `} ref={canvas_content}>
+                    {/* 
+                        gatsby, bootstrap, preact, storybook 
+                        'e2e testing', 'WebdriverIO', no-code,
+                        apolo, websocket
+                    */}
+                    {
+                    skills.map((tech, idx) => <span key={idx} className={`
+                        inline-block
+                        m-1
+                        p-2
+                        bg-slate-50/70
+                        text-base
+
+                        max-lg:text-sm
+                        max-lg:m-1
+                        max-lg:p-1
+
+                        max-m:text-xs
+                        max-m:m-[2px]
+                        max-m:p-[4px]
+
+                        max-s:text-[10px]
+                        max-s:m-[2px]
+                        max-s:p-[4px]
+                        `}>{tech}</span>)
+                    }
+                    </div>
+                </div>
+
         </div>
     </div>
 }
