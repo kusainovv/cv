@@ -13,5 +13,10 @@
         "place": "Place - Russia, Saratov",
         "english_level": "English - B2",
         "russian_level": "Russian - Native"
+    },
+
+    
+    "tech_skills": {
+        "title": "My tech skills"
     }
 }
