@@ -82,12 +82,12 @@ export const TechSkills = () => {
     useEffect(() => {
         runSphere();
 
-        setCanvasWrapper(canvas_content.current.clientHeight + 20)
-        window.addEventListener('resize', (e) => {
-            setCanvasWrapper(canvas_content.current.clientHeight + 20);
+        setCanvasWrapper( (canvas_content.current as HTMLElement).clientHeight + 20)
+        window.addEventListener('resize', () => {
+            setCanvasWrapper((canvas_content.current as HTMLElement).clientHeight + 20);
         });
     }, [ canvas_content.current ]);
-    console.warn(canvasWrapper);
+
     return <div className={`
         relative 
         min-h-screen 
@@ -114,7 +114,9 @@ export const TechSkills = () => {
                     max-m:pb-0
                 `}>{t('tech_skills.title')}</h1>
 
-                <div style={{
+                <div className={`
+                    min-h-screen
+                `} style={{
                     height: `${canvasWrapper + 20}px`
                 }}>
                     <canvas id="bg" className={`
@@ -126,17 +128,12 @@ export const TechSkills = () => {
                     <div className={`
                         absolute
                         w-auto
-                        top-[10%]
+                        top-[100px]
                         p-5
                         bg-black/20
 
                         max-m:pt-0
                     `} ref={canvas_content}>
-                    {/* 
-                        gatsby, bootstrap, preact, storybook 
-                        'e2e testing', 'WebdriverIO', no-code,
-                        apolo, websocket
-                    */}
                     {
                     skills.map((tech, idx) => <span key={idx} className={`
                         inline-block
