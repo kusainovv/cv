@@ -112,7 +112,8 @@ export const ProjectsList = () => {
             responsibilities: [
                 t('projects.my_core'),
                 t('projects.core_suitable')
-            ]
+            ],
+            link: "https://github.com/kusainovv/core.kus/tree/main/core"
         } ]   
     ];
    
@@ -157,7 +158,6 @@ export const ProjectsList = () => {
                       transition
                       ease-linear
                       duration-300          
-                      cursor-pointer 
                     hover:bg-black
                       hover:transition-[10s]
                       max-xl:bg-black/80
