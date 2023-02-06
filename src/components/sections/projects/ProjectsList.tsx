@@ -138,10 +138,10 @@ export const ProjectsList = () => {
 
                 max-md:flex
                 max-md:flex-col
-        `}>
+        `} key={k}>
             {
-                i.map(i => {
-                    return <div className={`
+                i.map((i, k) => {
+                    return <div key={k} className={`
                     bg-black/60
                       p-5
                       mr-1
@@ -174,7 +174,7 @@ export const ProjectsList = () => {
                         underline
                         mb-5
                         max-xl:text-xl
-                        max-md:text-4xl
+                        max-md:text-3xl
                         max-md:min-h-[0]
                         max-md:mb-3
                     `}>{i.project_name}</h1>

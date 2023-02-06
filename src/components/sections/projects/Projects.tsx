@@ -16,6 +16,9 @@ export const Projects = () => {
             text-slate-50
             bg-black
             text-center
+
+            max-lg:text-4xl
+            max-md:text-3xl
         `}>Projects</h1>
 
         <ProjectsList />
