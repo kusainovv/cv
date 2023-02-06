@@ -60,7 +60,7 @@ const projects = [
             ],
             link: "https://academy.modernarbitration.ru/application"
         }, {
-            project_name: "DNA (Swedish project)",
+            project_name: "/DNA/ (Swedish project)",
             role: "Frontend developer",
             responsibilities: [
                 'Made the layout from Figma',
@@ -143,10 +143,13 @@ export const Projects = () => {
                         max-xs:bg-[25%]
                         overflow-hidden
                         flex
-                        items-center
+                        items-start
                         justify-center  
                         p-5
                         font-unbounded
+
+                        max-md:flex
+                        max-md:flex-col
                 `}>
                     {
                         i.map(i => {
@@ -161,6 +164,12 @@ export const Projects = () => {
                               flex
                               flex-col
                               justify-start
+                              break-words
+                              max-xl:bg-black/80
+                              max-md:w-full
+                              max-md:mt-5
+                              max-md:mb-5
+                              max-md:min-h-[auto]
                         `}>
                             <h1 className={`
                                 min-h-[108px]
@@ -168,6 +177,11 @@ export const Projects = () => {
                                 text-slate-50
                                 font-unbounded
                                 underline
+                                mb-5
+                                max-xl:text-xl
+                                max-md:text-4xl
+                                max-md:min-h-[0]
+                                max-md:mb-3
                             `}>{i.project_name}</h1>
             
                             <p className={`
@@ -175,6 +189,8 @@ export const Projects = () => {
                                 min-h-[40px]
                                 mb-5
                                 text-slate-100
+                                max-xl:text-base
+                                max-md:text-xl
                             `}>
                                 Role: <span>{i.role}</span>
                             </p>
@@ -184,11 +200,14 @@ export const Projects = () => {
                                 text-3xl
                                 text-slate-50
                                 mb-5
+                                max-xl:text-base
+                                max-md:text-lg
                             `}>
                                 Responsibilities:
                             </p>
                                 <ul className={`
                                     pl-5
+                                    mb-5
                                 `}>
                                     {i.responsibilities.map(rol => <li key={rol} className={`
                                         mt-5
@@ -196,6 +215,10 @@ export const Projects = () => {
                                         list-disc
                                         text-base
                                         text-slate-50
+                                        font-thin
+                                        max-xl:text-sm
+                                        max-xl:mt-2
+                                        max-xl:mb-2
                                     `}>{rol}</li>)}
                                 </ul>
         
@@ -204,8 +227,9 @@ export const Projects = () => {
                                     w-fit
                                     text-4xl
                                     underline
-                                    mb-5
+                                    mb-0
                                     mt-auto
+                                    max-xl:text-xl
                                 `}>Go to application</a> }
                         </div>
                         })
