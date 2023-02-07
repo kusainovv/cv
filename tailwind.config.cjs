@@ -58,6 +58,8 @@ module.exports = {
     backgroundImage: {
       'section_first': "url('~sections/greeting/bg.jpeg')",
       'section_second': "url('~sections/bio/bg.jpg')",
+      'section_third': "url('~sections/projects/bg.jpeg')",
+      'section_fourd': "url('~sections/projects/bg.jpg')",
 
       'section_first_neon': "url('~sections/dac-neon.webp')",
     

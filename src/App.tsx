@@ -3,6 +3,7 @@ import { Navigation } from "./components/common/Navigation";
 import { Biography } from "./components/sections/bio/Biography";
 import { Greeting } from "./components/sections/greeting/Greeting";
 import { GreetingBurgerMenu } from "./components/sections/greeting/GreetingBurgerMenu";
+import { Projects } from "./components/sections/projects/Projects";
 import { TechSkills } from "./components/sections/tech_skills/TechSkills";
 import { RootStoreProvider } from "./store/provider/RootStoreProvider";
 
@@ -11,6 +12,7 @@ export const App = () => {
     <Greeting />
     <Biography />
     <TechSkills />
+    <Projects />
   
     <Navigation />
   

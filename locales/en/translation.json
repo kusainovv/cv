@@ -18,5 +18,31 @@
     
     "tech_skills": {
         "title": "My tech skills"
+    },
+
+    "projects": {
+        "designed_front": "Designed and implemented the frontend system",
+        "stack": "Stack",
+        "custom_feature": "Wrote custom hooks and contexts",
+        "feature_core": "Add the new functionals to company core",
+        "cicd": "Followed the correct work of CI/CD, Gitlab",
+        "refactored_optimize": "Refactored the code and optimize them",
+        "add_support": "Add new functionals to application and supported existing functional",
+        "communicate": "Communicated with developers and was active in the life of the project",
+        "communicate_abroad": "Communicated with swedish developers and was active in the life of the project",
+        "from_figma": "Made the layout from Figma",
+        "follow_perfomance": "Follow by perfomance of all project and update it",
+        "mobx_split": "Used Mobx and splited all application code for it",
+        "diff_logic": "Made difficult logic for UI and buisness logic layer",
+        "eco_form": "Wrote difficult forms and write special eco-system for them",
+        "widget_amocrm": "Created the new widget for amoCRM",
+        "advanced_ts": "Wrote advanced TypeScript code",
+        "my_core": "This is my own written core",
+        "core_suitable": "Everything that i wrote before also suitable for this",
+        "wordpress_functional": "Added new functionals to WordPress",
+        "php_exp": "Wrote PHP code with HTML, CSS, JavaScript",
+        "diff_request": "Make the difficult requests, send images using built-in FormData object",
+        "communicate_backend": "Communicated with backend developers and was active in the life of the project",
+        "diff_front": "Wrote difficult functionals as drag and drop and other for frontend"
     }
 }

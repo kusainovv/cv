@@ -9,14 +9,14 @@ import { useTranslation } from "react-i18next";
 
 const skills =  [
     'HTML', 'HTML5', 'CSS', 'CSS3', 'React', 'React Hooks', 'React Context', 'React-router', 'react-router-dom', 
-    'react-router', 'Next.js', 'TypeScript', 'JSX', 'Redux', 'Redux Thunk', 'Mobx', 'Jquery', 'pug', 'Responsive design', 
+    'react-router', 'Next.js', 'TypeScript', 'JSX', 'Redux', 'Redux Thunk', 'react-visibility-sensor', 'moment', 'react-markdown', 'Mobx', 'Jquery', 'pug', 'Responsive design', 
     'Cross-Browser Development', 'Optimization', 'The Lighthouse', 'Web API',
     'Flexible Layout', 'Screen Reader', 'Material UI', 'Ant-Design', 'Tailwind', 'Babel', 'Formik', 'HTTP', 'Rest API', 'node.js', 'express.js', 
     'Mongo Data Base (MongoDB)', 'SVG', 'canvas', 'three.js', 'UX', 'UI', 'DOM',
     'CSS-IN-JS', 'emotion', 'styled-components', 'CSS Modules', 'React module css', 'SASS', 'SCSS', 'LESS', 'PostCSS',
     'CRA', 'Vite', 'Webpack', 'webpack-module-federation', 'axios', 'AJAX', 'ECMAScript', 'SPA', 'Single Project Application', 'SSR', 'Server Side Rendering', 
-    'CI/CD', 'Bitbucket', 'Github', 'Gitlab', 'Figma', 'Photoshop', 'Unit testing', 'Jest', 'Integration testing', 'Enzyme', 'JSON', 'yarn', 'npm', 'flux',
-    'Swagger', 'amoCRM', 'OOP / Object-oriented programming', 'FP /Functional programming', 'C#', 'Razor', 'Entity', 'Clojure', 'PHP', 'Laravel',
+    'notistack', 'CI/CD', 'Bitbucket', 'Github', 'Gitlab', 'Figma', 'Photoshop', 'Unit testing', 'Jest', 'Integration testing', 'Enzyme', 'JSON', 'yarn', 'npm', 'flux',
+    'Swagger', 'amoCRM', 'OOP / Object-oriented programming', 'FP /Functional programming', 'C#', 'Razor', 'Entity', 'Clojure', 'PHP', 'Laravel', 
 ];
 
 const runSphere = () => {

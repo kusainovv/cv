@@ -42,6 +42,7 @@ export const BurgerMenu = observer(() => {
             translate-x-1/2 
             -translate-y-1/2 
             cursor-pointer           
+            z-10
             max-sm:!w-[15vh]
             max-sm:!h-[15vh]
         `} onClick={() => {
