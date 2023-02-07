@@ -13,7 +13,7 @@ export const Biography = () => {
     const resizeFogScreen = debounce(() => {
         console.log("Canvas was resize");
         runFog(document.getElementById('fog'), 0.08, canvasHeight.current);
-    }, 1000)
+    }, 5_000)
 
     useEffect(() => {
         window.addEventListener('resize', resizeFogScreen);

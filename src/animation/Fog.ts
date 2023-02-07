@@ -49,7 +49,7 @@ export const runFog = (WebGLCanvas, opacity, WebGLCanvasHeight) => {
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, WebGLCanvasHeight.scrollHeight);
     
-    
+    console.warn(WebGLCanvasHeight.scrollHeight);
     
     
     const composer = new EffectComposer(renderer);
@@ -91,7 +91,7 @@ export const runFog = (WebGLCanvas, opacity, WebGLCanvasHeight) => {
     const onWindowResize = () => {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setSize(window.innerWidth, WebGLCanvasHeight.scrollHeight);
     }
 
     window.addEventListener("resize", onWindowResize, false);

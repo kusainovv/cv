@@ -33,7 +33,7 @@ export const GreetingBurgerMenu = () => {
             `} style={{
                 backgroundImage: `url('data:image/svg+xml;utf8,${cloud}')`
             }}>
-                {t('greeting.click_for_settings')}
+                {t('greeting.lang')}
             </p>
         </div>
 

@@ -73,7 +73,7 @@ export const OtherProgramming = () => {
                     `}>Medium</a>
                 </li>
                 <li className={`mb-2`}>
-                    <a href={''} className={`
+                    <a href={'https://kusainovv.medium.com'} className={`
                         text-3xl
                         underline
                         max-lg:text-xl
@@ -85,10 +85,9 @@ export const OtherProgramming = () => {
             title: "Contact with me",
             description: <ul className={List}>
                 <li className={`mb-2`}>
-                    <a href={'https://t.me/kekw_k'} target={"_blank"} className={`
+                    <a href={'https://www.codewars.com/users/kusainovv'} target={"_blank"} className={`
                         text-3xl
                         underline
-
                         max-lg:text-xl
                     `}>Telegram</a>
                 </li>

@@ -1,7 +1,7 @@
 {
     "greeting": {
         "scroll_down": "Scroll down & join the club!",
-        "click_for_settings": "Click for show the settings"
+        "lang": "en/ru"
     },
 
 
@@ -13,7 +13,8 @@
         "place": "Place - Russia, Saratov",
         "english_level": "English - B2",
         "russian_level": "Russian - Native",
-        "commercial_exp": "Commercial Experience - 2 year"
+        "commercial_exp": "Commercial Experience - 2 year",
+        "linkedIn": "profile + recommendation"
     },
 
     
