@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import character from '../../../../public/sections/bio/me.png';
 import { Indicator } from "../../common/Indicator/Indicator";
 import { useTranslation } from "react-i18next";
@@ -7,15 +7,16 @@ import { runFog } from "../../../animation/Fog";
 
 
 export const Biography = () => {
+    const canvasHeight = useRef();
     useEffect(() => {
-        runFog(document.getElementById('fog'), 0.035);
-    }, []);
+        runFog(document.getElementById('fog'), 0.055, canvasHeight.current);
+    }, [ canvasHeight.current ]);
 
     const { t } = useTranslation();
 
     return <div className={`
         relative 
-        h-screen 
+        min-h-screen 
         bg-section_second 
         bg-no-repeat 
         bg-cover
@@ -27,7 +28,7 @@ export const Biography = () => {
         justify-center
 
         max-lg:flex-col
-    `}>
+    `} ref={canvasHeight}>
         <img src={character} className={`
             max-w-[544px]
             right-[10%]
@@ -55,7 +56,6 @@ export const Biography = () => {
             ml-[50px]
             transition-[10s]
             bg-black/60
-            rounded-br-[50%]
 
             max-xl:ml-[0px]
             max-lg:w-full
@@ -116,8 +116,7 @@ export const Biography = () => {
 
         <canvas id="fog" className={`
             absolute
-            w-[100%]
-            h-[100%]
+            top-0
         `}></canvas>
     </div>
 }

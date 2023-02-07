@@ -7,7 +7,7 @@ import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass';
 import smoke_texture from '../../public/smoke.png';
 import { runAnimation } from '../utils/runAnimation';
 
-export const runFog = (WebGLCanvas, opacity) => {
+export const runFog = (WebGLCanvas, opacity, WebGLCanvasHeight) => {
     const scene = new THREE.Scene();
 
     const camera = new THREE.PerspectiveCamera(95, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -23,7 +23,7 @@ export const runFog = (WebGLCanvas, opacity) => {
     directionalLight.position.set(0, 0, 1);
     scene.add(directionalLight);
     
-    
+    console.warn(WebGLCanvasHeight)
     
     
     const orangeLight = new THREE.PointLight(0xc8caf7, 50, 450, 1.7);
@@ -46,10 +46,10 @@ export const runFog = (WebGLCanvas, opacity) => {
     const renderer = new THREE.WebGLRenderer({
         canvas: WebGLCanvas,
     });
-    
+
     renderer.setClearColor(0x000, 0);
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth, WebGLCanvasHeight.scrollHeight);
     
     
     
