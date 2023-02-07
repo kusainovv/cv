@@ -98,7 +98,7 @@ export const OtherProgramming = () => {
                         underline
 
                         max-lg:text-xl
-                    `}>CodeWars</a>
+                    `}>Gmail</a>
                 </li>
             </ul>
         }
