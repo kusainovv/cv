@@ -123,6 +123,11 @@ export const OtherProgramming = () => {
             p-5
             bg-black/60
             max-s:bg-black/80
+            max-s:p-0
+            max-s:h-screen
+            max-s:flex
+            max-s:flex-col
+            max-s:justify-center
         `}>
             {
                 otherSkills.map((skill, idx) => {
@@ -134,21 +139,22 @@ export const OtherProgramming = () => {
                     mb-3
                     font-unbounded
                     text-slate-50
-
                     max-lg:w-full
                 `} key={idx}>
                 
                     <p className={`
                         text-6xl
                         font-unbounded
-                        
                         max-lg:text-2xl
                         max-s:text-xl
+                        pl-5
+                        border-solid
+                        border-l-8
                     `}>{skill.title}</p>
 
                         
                     <div className={`
-                        pl-2
+                        pl-5
                         mt-5
                         overflow-hidden     
                         max-lg:mt-2
