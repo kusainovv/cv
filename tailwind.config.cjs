@@ -60,6 +60,7 @@ module.exports = {
       'section_second': "url('~sections/bio/bg.jpg')",
       'section_third': "url('~sections/projects/bg.jpeg')",
       'section_fourd': "url('~sections/projects/bg.jpg')",
+      'section_fifth': "url('~sections/other_programming/bg.jpg')",
 
       'section_first_neon': "url('~sections/dac-neon.webp')",
     

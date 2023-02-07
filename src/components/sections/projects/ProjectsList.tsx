@@ -155,7 +155,6 @@ export const ProjectsList = () => {
                       justify-start
                       break-words
 
-                      transition
                       ease-linear
                       duration-300          
                     hover:bg-black
