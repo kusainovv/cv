@@ -20,6 +20,7 @@ export const GreetingBurgerMenu = () => {
                 w-[100px] 
                 m-auto  
                 mr-0
+                pl-[20px]
                 max-sm:w-[50px]
             `} alt={'settings'} />
 

@@ -1,37 +1,17 @@
 import React, { useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
-import { useRootStore } from '../../../store/provider/useRootStore';
 import { getBurgerMenuAnimation } from './getBurgerMenuAnimation';
-
-
+import { useTranslation } from 'react-i18next';
 
 export const BurgerMenu = observer(() => {
-    const { burgerMenuStore } = useRootStore();
-    const { showButtonMenu, showFullMenu } = getBurgerMenuAnimation();
+    const { showButtonMenu } = getBurgerMenuAnimation();
+    const { i18n } = useTranslation();
 
     useEffect(() => {
-        if (!burgerMenuStore.isShowBurgerMenu) {
-            showButtonMenu();
-        } else {
-            showFullMenu();
-        }
-    }, [ burgerMenuStore.isShowBurgerMenu ]);
+        showButtonMenu();
+    }, []);
 
     return <>
-        <div className={`
-            fixed 
-            w-screen  
-            top-0 
-            h-screen 
-            bg-main_menu_background_texture 
-            ${ burgerMenuStore.isShowBurgerMenu ? 'left-[0px]' : 'left-[2000px]'} 
-            duration-1000
-        `}>
-            <canvas id="full_menu">
-            </canvas>
-        </div>
-
-
         <canvas className={`
             fixed 
             !w-[25vh] 
@@ -46,11 +26,7 @@ export const BurgerMenu = observer(() => {
             max-sm:!w-[15vh]
             max-sm:!h-[15vh]
         `} onClick={() => {
-            if (burgerMenuStore.isShowBurgerMenu) {
-                burgerMenuStore.closeFullMenu();
-            } else {
-                burgerMenuStore.openFullMenu();
-            }
+            i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
         }} id="burger_menu"></canvas>   
     </>   
 });

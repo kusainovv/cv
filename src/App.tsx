@@ -6,10 +6,9 @@ import { GreetingBurgerMenu } from "./components/sections/greeting/GreetingBurge
 import { OtherProgramming } from "./components/sections/other_programming/OtherProgramming";
 import { Projects } from "./components/sections/projects/Projects";
 import { TechSkills } from "./components/sections/tech_skills/TechSkills";
-import { RootStoreProvider } from "./store/provider/RootStoreProvider";
 
 export const App = () => {
-  return <RootStoreProvider>
+  return <>
     <Greeting />
     <Biography />
     <TechSkills />
@@ -19,5 +18,5 @@ export const App = () => {
     <Navigation />
   
     <GreetingBurgerMenu />
-  </RootStoreProvider>
+  </>
 }

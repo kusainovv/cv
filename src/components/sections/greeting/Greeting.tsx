@@ -25,7 +25,17 @@ export const Greeting = () => {
     `} >
         <div className={`absolute bg-section_first_neon bg-no-repeat bg-cover ${ isShowNeon ? 'w-full h-screen' : ''}`}></div>
 
-        <div className={"h-screen pb-5 flex flex-col justify-end bg-transparent items-center"}>
+        <div className={`
+            h-screen 
+            pb-5 flex 
+            flex-col 
+            justify-end 
+            bg-transparent 
+            items-center
+            pr-[10px]
+            pl-[10px]
+            text-center
+        `}>
             <h1 className={`
                 relative 
                 font-network 
