@@ -13,10 +13,9 @@ export const Projects = () => {
             p-3
             text-5xl
             font-network
+            text-center
             text-slate-50
             bg-black
-            text-center
-
             max-lg:text-4xl
             max-md:text-3xl
         `}>Projects</h1>
