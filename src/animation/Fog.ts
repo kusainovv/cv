@@ -23,8 +23,6 @@ export const runFog = (WebGLCanvas, opacity, WebGLCanvasHeight) => {
     directionalLight.position.set(0, 0, 1);
     scene.add(directionalLight);
     
-    console.warn(WebGLCanvasHeight)
-    
     
     const orangeLight = new THREE.PointLight(0xc8caf7, 50, 450, 1.7);
     orangeLight.position.set(200, 300, 100);
