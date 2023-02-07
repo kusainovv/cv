@@ -36,7 +36,7 @@ export const ProjectsList = () => {
                 `${t('projects.stack')}: React, React Context, Redux, Storybook, Redux toolkit, Typescript, JavaScript, axios, styled-components, Web API, i18n, moment, react-visibility-sensor, react-markdown`,
                 t('projects.custom_feature'),
                 t('projects.refactored_optimize'),
-                t('projects.add_suport'),
+                t('projects.add_support'),
                 t('projects.feature_core'),
                 t('projects.communicate'),
             ],
@@ -50,7 +50,7 @@ export const ProjectsList = () => {
                 t('projects.custom_feature'),
                 t('projects.refactored_optimize'),
                 t('projects.eco_form'),
-                t('projects.add_suport'),
+                t('projects.add_support'),
                 t('projects.communicate'),
             ],
             link: "https://young.modernarbitration.ru"
@@ -67,7 +67,7 @@ export const ProjectsList = () => {
                     t('projects.follow_perfomance'),
                     t('projects.refactored_optimize'),
                     t('projects.eco_form'),
-                    t('projects.add_suport'),
+                    t('projects.add_support'),
                     t('projects.communicate'),
                 ],
                 link: "https://academy.modernarbitration.ru/application"
@@ -80,7 +80,7 @@ export const ProjectsList = () => {
                     t('projects.mobx_split'),
                     t('projects.follow_perfomance'),
                     t('projects.refactored_optimize'),
-                    t('projects.add_suport'),
+                    t('projects.add_support'),
                     t('projects.communicate_abroad'),
                 ]
             },
@@ -91,7 +91,7 @@ export const ProjectsList = () => {
                     t('projects.wordpress_functional'),
                     t('projects.php_exp'),
                     t('projects.refactored_optimize'),
-                    t('projects.add_suport'),
+                    t('projects.add_support'),
                     t('projects.communicate'),
                 ]
             }
