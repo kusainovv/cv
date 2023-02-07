@@ -4,13 +4,24 @@ import { Indicator } from "../../common/Indicator/Indicator";
 import { useTranslation } from "react-i18next";
 import { BiographyFacts } from "./BiographyFacts";
 import { runFog } from "../../../animation/Fog";
+import { debounce } from "../../../utils/debounce";
 
 
 export const Biography = () => {
-    const canvasHeight = useRef();
+    let canvasHeight = useRef(null);
+
+    const resizeFogScreen = debounce(() => {
+        console.log("Canvas was resize");
+        runFog(document.getElementById('fog'), 0.08, canvasHeight.current);
+    }, 1000)
+
     useEffect(() => {
-        runFog(document.getElementById('fog'), 0.055, canvasHeight.current);
-    }, [ canvasHeight.current ]);
+        window.addEventListener('resize', resizeFogScreen);
+        runFog(document.getElementById('fog'), 0.08, canvasHeight.current);
+        return () => {
+            window.removeEventListener('resize', resizeFogScreen);
+        }
+    }, []);
 
     const { t } = useTranslation();
 
@@ -117,6 +128,8 @@ export const Biography = () => {
         <canvas id="fog" className={`
             absolute
             top-0
+            w-screen
+            h-full
         `}></canvas>
     </div>
 }
